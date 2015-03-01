@@ -16,9 +16,9 @@
         <td><%= team.name %></td>
         <td><%= team.state %></td>
         <td><%= team.city %></td>
-        <td><%= link_to 'Show', team %></td>
-        <td><%= link_to 'Edit', edit_team_path(team) %></td>
-        <td><%= link_to 'Destroy', team, method: :delete, data: { confirm: 'Está certo disso?' } %></td>
+        <td><%= link_to 'Ver time', team %></td>
+        <td><%= link_to 'Editar time', edit_team_path(team) %></td>
+        <td><%= link_to 'Excluir time', team, method: :delete, data: { confirm: 'Está certo disso?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Team', new_team_path %>
+<%= link_to 'Adicionar novo time', new_team_path %>

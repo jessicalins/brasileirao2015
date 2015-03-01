@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @team.name %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @team.state %>
+</p>
+
+<p>
+  <strong>Cidade:</strong>
+  <%= @team.city %>
+</p>
+
+<%= link_to 'Editar time', edit_team_path(@team) %> |
+<%= link_to 'Voltar', teams_path %>
