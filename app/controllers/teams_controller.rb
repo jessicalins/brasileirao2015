@@ -18,14 +18,6 @@ class TeamsController < ApplicationController
 		end
 	end
 
-	def edit
-		@team = Team.find(params[:id])
-	end
-
-	def show
-		@team = Team.find(params[:id])
-	end
-
 	def update
 		if @team.update(team_params)
 			redirect_to @team, notice: 'Time atualizado com sucesso!'
@@ -40,11 +32,11 @@ class TeamsController < ApplicationController
 	end
 
 	private
-	    def set_team
-	      @team = Team.find(params[:id])
-	    end
+    def set_team
+      @team = Team.find(params[:id])
+    end
 
 		def team_params
-	      params.require(:team).permit(:name, :state, :city)
-	    end
+      params.require(:team).permit(:name, :state, :city)
+    end
 end

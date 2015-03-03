@@ -2,12 +2,17 @@ pt-BR:
   activerecord:
     models:
       team: Time
+      player: Jogador
     attributes:
       team:
         name: "Nome"
         state: "Estado"
         city: "Cidade"
-      # will translate User attribute "login" as "Handle"
+      player:
+        name: "Nome"
+        position: "Posição"
+        age: "Idade"
+        picture: "Foto"
   date:
     abbr_day_names:
     - Dom

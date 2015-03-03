@@ -1,29 +1,48 @@
-<%= form_for(@team) do |f| %>
+<%= form_for(@team, html: { class: 'form-horizontal' }) do |f| %>
+<fieldset>
   <% if @team.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@team.errors.count, "error") %> ocorreu um erro ao adicionar o time:</h2>
-
-      <ul>
-      <% @team.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+    <div class="container">
+      <div class="alert alert-danger">
+        <strong>Ocorreram um ou mais erros:</strong> 
+        <ul>
+          <% @team.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="textinput"><%= f.label :name %></label>  
+    <div class="col-md-4">
+      <%= f.text_field :name, class: 'form-control input-md' %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :state %><br>
-    <%= f.text_field :state %>
+
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="textinput"><%= f.label :state %></label>  
+    <div class="col-md-4">
+      <%= f.text_field :state, class: 'form-control input-md' %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :city %><br>
-    <%= f.text_field :city %>
+
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="textinput"><%= f.label :city %></label>  
+    <div class="col-md-4">
+      <%= f.text_field :city, class: 'form-control input-md' %>
+    </div>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+
+  <!-- Button -->
+  <div class="form-group actions">
+    <label class="col-md-4 control-label" for="singlebutton"></label>
+    <div class="col-md-4">
+      <%= f.submit class: 'btn btn-primary' %>
+    </div>
   </div>
+</fieldset>
 <% end %>

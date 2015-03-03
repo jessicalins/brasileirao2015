@@ -1,36 +1,23 @@
-<p>
-  <strong>Nome:</strong>
-  <%= @team.name %>
-</p>
-
-<p>
-  <strong>Estado:</strong>
-  <%= @team.state %>
-</p>
-
-<p>
-  <strong>Cidade:</strong>
-  <%= @team.city %>
-</p>
+<h1>Jogadores do Brasileirão 2015</h1>
 
 <table class="table table-bordered table-striped">
   <thead>
     <tr>
       <th>Nome</th>
-      <th>Estado</th>
-      <th>Cidade</th>
+      <th>Posição</th>
+      <th>Idade</th>
+      <th>Time</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @team.players.each do |player| %>
+    <% @players.each do |player| %>
       <tr>
         <td><%= player.name %></td>
         <td><%= player.position %></td>
         <td><%= player.age %></td>
-        <td><%= player.picture %></td>
-        <td><%= player.team.name %></td>
+        <td><%= player.team %></td>
         <td><%= link_to 'Ver jogador', player %></td>
         <td><%= link_to 'Editar jogador', edit_player_path(player) %></td>
         <td><%= link_to 'Excluir jogador', player, method: :delete, data: { confirm: 'Está certo disso?' } %></td>
@@ -39,5 +26,6 @@
   </tbody>
 </table>
 
-<%= link_to 'Editar time', edit_team_path(@team) %> |
-<%= link_to 'Voltar', teams_path %>
+<br>
+
+<%= link_to 'Adicionar novo jogador', new_player_path %>
