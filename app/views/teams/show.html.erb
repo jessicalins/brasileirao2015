@@ -1,43 +1,64 @@
-<p>
-  <strong>Nome:</strong>
-  <%= @team.name %>
-</p>
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#info" data-toggle="tab" aria-expanded="true">Informações do time</a></li>
+  <li class=""><a href="#players" data-toggle="tab" aria-expanded="false">Jogadores</a></li>
+</ul>
+<div id="myTabContent" class="tab-content">
+  <div class="tab-pane fade active in" id="info">
+    <div class="panel panel-success">
+    <div class="panel-heading"><%= @team.name %></div>
+    <div class="panel-body">
+      <p>
+      <strong>Nome: </strong>
+        <%= @team.name %>
+      </p>
 
-<p>
-  <strong>Estado:</strong>
-  <%= @team.state %>
-</p>
+      <p>
+      <strong>Estado: </strong>
+        <%= @team.state %>
+      </p>
 
-<p>
-  <strong>Cidade:</strong>
-  <%= @team.city %>
-</p>
+      <p>
+      <strong>Cidade: </strong>
+        <%= @team.city %>
+      </p>
+    </div>
+  </div>
+    
+  </div>
+  <div class="tab-pane fade" id="players">
+    <% if !@team.players.empty? %>
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Foto</th>
+            <th>Nome</th>
+            <th>Posição</th>
+            <th>Idade</th>
+            <th>Time</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
 
-<table class="table table-bordered table-striped">
-  <thead>
-    <tr>
-      <th>Nome</th>
-      <th>Estado</th>
-      <th>Cidade</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @team.players.each do |player| %>
-      <tr>
-        <td><%= player.name %></td>
-        <td><%= player.position %></td>
-        <td><%= player.age %></td>
-        <td><%= player.picture %></td>
-        <td><%= player.team.name %></td>
-        <td><%= link_to 'Ver jogador', player %></td>
-        <td><%= link_to 'Editar jogador', edit_player_path(player) %></td>
-        <td><%= link_to 'Excluir jogador', player, method: :delete, data: { confirm: 'Está certo disso?' } %></td>
-      </tr>
+        <tbody>
+          <% @team.players.each do |player| %>
+            <tr>
+              <td><%= player.picture.url %></td>
+              <td><%= player.name %></td>
+              <td><%= player.position %></td>
+              <td><%= player.age %></td>
+              <td><%= player.team.name %></td>
+              <td><%= link_to 'Ver jogador', player %></td>
+              <td><%= link_to 'Editar jogador', edit_player_path(player) %></td>
+              <td><%= link_to 'Excluir jogador', player, method: :delete, data: { confirm: 'Está certo disso?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% else %>
+      <p><h3>Esse time ainda não possui jogadores!</h3>
     <% end %>
-  </tbody>
-</table>
+  </div>
+</div>
 
 <%= link_to 'Editar time', edit_team_path(@team) %> |
 <%= link_to 'Voltar', teams_path %>
