@@ -42,7 +42,7 @@
         <tbody>
           <% @team.players.each do |player| %>
             <tr>
-              <td><%= player.picture.url %></td>
+              <td><%= image_tag player.picture.url %></td>
               <td><%= player.name %></td>
               <td><%= player.position %></td>
               <td><%= player.age %></td>

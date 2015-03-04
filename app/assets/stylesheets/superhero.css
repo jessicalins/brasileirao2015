@@ -4,3 +4,7 @@
  *= require superhero/loader
  *= require superhero/bootswatch
 */
+
+.footer {
+	margin-top: 50px;
+}
