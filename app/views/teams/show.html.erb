@@ -42,7 +42,7 @@
         <tbody>
           <% @team.players.each do |player| %>
             <tr>
-              <td><%= image_tag player.picture.url %></td>
+              <td><%= image_tag player.picture.url, width: 70, height: 80 %></td>
               <td><%= player.name %></td>
               <td><%= player.position %></td>
               <td><%= player.age %></td>
@@ -55,7 +55,9 @@
         </tbody>
       </table>
     <% else %>
-      <p><h3>Esse time ainda não possui jogadores!</h3>
+      <p><h4>Esse time ainda não possui jogadores!</h4>
+      <%= link_to 'Adicionar novo jogador', new_player_path, class: 'btn btn-success' %>
+      <br><br>
     <% end %>
   </div>
 </div>

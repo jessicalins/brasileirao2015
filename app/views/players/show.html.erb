@@ -1,19 +1,37 @@
-<p>
-  <strong>Nome:</strong>
-  <%= @player.name %>
-</p>
+<div class="panel panel-success">
+  <div class="panel-heading">
+    <h3 class="panel-title">Informações sobre o jogador</h3>
+  </div>
+  <div class="panel-body">
+    <div class="media">
+		  <div class="media-left">
+		  	<%= image_tag @player.picture.url, width: 70, height: 80, class: 'media-object img-circle' %>
+		  </div>
+		  <div class="media-body">
+   	 	  <p>
+			  <strong>Nome:</strong>
+				  <%= @player.name %>
+				</p>
 
-<p>
-  <strong>Posição:</strong>
-  <%= @player.position %>
-</p>
+				<p>
+				  <strong>Posição:</strong>
+				  <%= @player.position %>
+				</p>
 
-<p>
-  <strong>Idade:</strong>
-  <%= @player.age %>
-</p>
+				<p>
+				  <strong>Idade:</strong>
+				  <%= @player.age %>
+				</p>
 
-<p>
-  <strong>Time:</strong>
-  <%= @player.team.name %>
-</p>
+				<p>
+				  <strong>Time:</strong>
+				  <%= @player.team.name %>
+				</p>
+  	  </div>
+	  </div>
+	  <%= link_to 'Voltar', teams_path %>
+  </div>
+</div>
+
+
+
