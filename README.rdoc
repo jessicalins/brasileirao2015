@@ -1,5 +1,5 @@
 == Brasileirao2015
-Web application with teams and players of the Brazilian football championship.
+Web application with teams and players of the Brazilian soccer championship.
 
 == Installation
 
