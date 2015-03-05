@@ -17,7 +17,7 @@ $ rake db:create
 
 $ rake db:migrate
 
-== Database initialization // TODO
+== Database initialization 
 
 $ rake db:seed
 
