@@ -3,6 +3,7 @@
 <table class="table table-bordered table-striped">
   <thead>
     <tr>
+      <th>Foto</th>
       <th>Nome</th>
       <th>Posição</th>
       <th>Idade</th>
@@ -14,6 +15,7 @@
   <tbody>
     <% @players.each do |player| %>
       <tr>
+        <td><%= image_tag player.picture.url, width: 70, height: 80, class: 'img-circle' %></td>
         <td><%= player.name %></td>
         <td><%= player.position %></td>
         <td><%= player.age %></td>
