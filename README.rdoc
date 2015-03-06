@@ -5,11 +5,9 @@ Web application with teams and players of the Brazilian soccer championship.
 
 $ git clone https://github.com/jessicalins/brasileirao2015.git
 
-$ gem uninstall libv8 -a -x
+$ cd brasileirao2015/
 
 $ bundle install
-
-$ gem install therubyracer -v '0.12.0'
 
 == Database creation
 
@@ -17,11 +15,14 @@ $ rake db:create
 
 $ rake db:migrate
 
-== Database initialization 
-
 $ rake db:seed
 
-== Ruby version
+== Troubleshooting
 
-== System dependencies
+Some versions of he ruby in the OS X can present issues with the *therubyracer* gem. In case of any problem, try to uninstall the libv8 and install the *therubyracer* gem again:
 
+$ gem uninstall libv8 -a -x
+
+$ bundle install
+
+$ gem install therubyracer -v '0.12.0'
