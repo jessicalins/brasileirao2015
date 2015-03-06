@@ -47,14 +47,6 @@
 
   <% if params[:team_id].present? %>
     <%= f.hidden_field :team_id, value: params[:team_id] %>
-  <% else %>
-    <!-- Select Basic -->
-    <div class="form-group">
-      <label class="col-md-4 control-label" for="selectbasic">Time</label>
-      <div class="col-md-4">
-        <%= f.collection_select(:team_id, Team.all, :id, :name, {}, { class: 'form-control' })%>
-      </div>
-    </div>
   <% end %>
 
   <!-- Button -->

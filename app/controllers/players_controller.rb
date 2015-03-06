@@ -14,6 +14,7 @@ class PlayersController < ApplicationController
 		if @player.save
 			redirect_to team_path(@player.team)
 		else
+			params[:team_id] = @player.team_id
 			render :new  
 		end
 	end
