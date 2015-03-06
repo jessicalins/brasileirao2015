@@ -19,7 +19,7 @@ $ rake db:seed
 ```
 ##Troubleshooting
 
-Some versions of he ruby in the OS X can present issues with the **therubyracer** gem. In case of any problem, try to uninstall the libv8 and install the **therubyracer** gem again:
+Some versions of the ruby in the OS X can present issues with the **therubyracer** gem. In case of any problem, try to uninstall the libv8 and install the **therubyracer** gem again:
 ```
 $ gem uninstall libv8 -a -x
 
