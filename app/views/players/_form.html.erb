@@ -45,9 +45,7 @@
     </div>
   </div>
 
-  <% if params[:team_id].present? %>
-    <%= f.hidden_field :team_id, value: params[:team_id] %>
-  <% end %>
+  <%= f.hidden_field :team_id, value: params[:team_id] %>
 
   <!-- Button -->
   <div class="form-group actions">
