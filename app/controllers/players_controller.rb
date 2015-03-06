@@ -12,7 +12,7 @@ class PlayersController < ApplicationController
 	def create
 		@player = Player.new(player_params)
 		if @player.save
-			redirect_to players_path, notice: 'Jogador adicionado com sucesso!'
+			redirect_to team_path(@player.team)
 		else
 			render :new  
 		end
@@ -20,7 +20,7 @@ class PlayersController < ApplicationController
 
 	def update
 		if @player.update(player_params)
-			redirect_to @player, notice: 'Jogador atualizado com sucesso!'
+			redirect_to @player
 		else
 			render :edit
 		end
@@ -28,7 +28,7 @@ class PlayersController < ApplicationController
 
 	def destroy
 		@player.destroy
-		redirect_to players_path, notice: 'Jogador excluído com sucesso!'
+		redirect_to team_path(@player.team)
 	end
 
 	private

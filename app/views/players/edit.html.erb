@@ -3,4 +3,4 @@
 <%= render 'form' %>
 
 <%= link_to 'Ver jogador', @player %> |
-<%= link_to 'Voltar', players_path %>
+<%= link_to 'Voltar', team_path(@player.team) %>

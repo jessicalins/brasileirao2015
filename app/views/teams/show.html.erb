@@ -56,7 +56,7 @@
       </table>
     <% else %>
       <p><h4>Esse time ainda não possui jogadores!</h4>
-      <%= link_to 'Adicionar novo jogador', new_player_path, class: 'btn btn-success' %>
+      <%= link_to 'Adicionar novo jogador', new_player_path(team_id: @team.id), class: 'btn btn-success' %>
       <br><br>
     <% end %>
   </div>
