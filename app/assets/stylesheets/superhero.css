@@ -6,13 +6,13 @@
 */
 
 .footer {
-	margin-top: 50px;
+  margin-top: 50px;
 }
 
 .jumbotron-image {
-	background-image: url(/assets/bg_players.jpg); 
-	background-size: 100%;
-	text-shadow: 2px 2px 2px #000;
+  background-image: url(/assets/bg_players.jpg); 
+  background-size: 100%;
+  text-shadow: 2px 2px 2px #000;
 }
 
 
